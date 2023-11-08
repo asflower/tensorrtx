@@ -58,7 +58,7 @@ static __global__ void nms_kernel(float *bboxes, int max_objects, float threshol
         return;
 
     float *pcurrent = bboxes + 1 + position * bbox_element;
-    for (int i = 1; i < count; ++i) {
+    for (int i = 0; i < count; ++i) {
         float *pitem = bboxes + 1 + i * bbox_element;
         if (i == position || pcurrent[5] != pitem[5]) continue;
 
